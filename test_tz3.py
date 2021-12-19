@@ -1,6 +1,16 @@
 import pytest
+import random
 
 from tz3 import search_maxn, search_minn, find_sum_of_n, find_multi
+
+
+def random_list():
+    file = []
+    k = random.randint(0, 1025)
+    for i in range(0, k - 1):
+        n = random.uniform(-1048567, 1048576)
+        file.append(n)
+    return file
 
 
 def test_over_flow_error():
@@ -8,41 +18,27 @@ def test_over_flow_error():
         print("OverFlowError")
 
 
-def test_search_maxn(file_name):
-    with open(file_name, "r") as f:
-        data = []
-        full_f = f.read()
-        for i in full_f.split():
-            data.append(float(i))
-    maxi = max(data)
+def test_search_maxn():
+    file_name = random_list()
+    maxi = max(file_name)
     assert search_maxn(file_name) == maxi
 
 
-def test_search_minn(file_name):
-    with open(file_name, "r") as f:
-        data = []
-        full_f = f.read()
-        for i in full_f.split():
-            data.append(float(i))
-    mini = max(data)
+def test_search_minn():
+    file_name = random_list()
+    mini = max(file_name)
     assert search_minn(file_name) == mini
 
 
-def test_find_sum_of_n(file_name):
-    with open(file_name, "r") as f:
-        data = []
-        full_f = f.read()
-        for i in full_f.split():
-            data.append(float(i))
-    sumi = sum(data)
+def test_find_sum_of_n():
+    file_name = random_list()
+    sumi = sum(file_name)
     assert find_sum_of_n(file_name) == sumi
 
 
-def test_find_multi(file_name):
+def test_find_multi():
     multi = 1
-    file = open(file_name, "r")
-    for line in file:
-        parts = line.split()
-        for i in parts:
-            multi *= float(i)
+    file_name = random_list()
+    for i in file_name:
+        multi *= float(i)
     assert find_multi(file_name) == multi
