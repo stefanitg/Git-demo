@@ -52,3 +52,4 @@ def test_is_digits():
     rand_file = random_list()
     digit = search_maxn(rand_file)
     assert type(digit) == float or type(digit) == int
+      
