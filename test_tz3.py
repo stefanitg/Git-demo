@@ -1,4 +1,3 @@
-import pytest
 import random
 
 from tz3 import search_maxn, search_minn, find_sum_of_n, find_multi
@@ -10,12 +9,8 @@ def random_list():
     for i in range(0, k - 1):
         n = random.uniform(-1048567, 1048576)
         file.append(n)
-    return file
-
-
-def test_over_flow_error():
-    with pytest.raises(OverflowError) as err:
-        print("OverFlowError")
+    file_1 = " ".join(map(str, file))
+    return file_1
 
 
 def test_search_maxn():
