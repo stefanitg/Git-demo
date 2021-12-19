@@ -16,20 +16,26 @@ def random_list():
 def test_search_maxn():
     file_test = random_list()
     maxi = max(file_test)
-    assert search_maxn(file_test) == float(maxi)
+    maxp = search_maxn(file_test)
+    assert maxp == maxi
 
 
 def test_search_minn():
     file_test = random_list()
     mini = max(file_test)
-    assert search_minn(file_test) == float(mini)
+    minp = search_minn(file_test)
+    assert minp == mini
 
 
 def test_find_sum_of_n():
     file_test = random_list()
     file_test_fsum = file_test.split()
-    sumi = sum(file_test_fsum)
-    assert find_sum_of_n(file_test) == sumi
+    sumi = 0
+    for i in file_test_fsum:
+        i = float(i)
+        sumi += i
+    sump = find_sum_of_n(file_test)
+    assert sump == sumi
 
 
 def test_find_multi():
@@ -38,9 +44,11 @@ def test_find_multi():
     file_for_multi = file_test.split()
     for i in file_for_multi:
         multi *= float(i)
-    assert find_multi(file_test) == multi
+    sump = find_multi(file_test)
+    assert sump == multi
 
 
 def test_is_digits():
-    digit = search_maxn(random_list())
+    rand_file = random_list()
+    digit = search_maxn(rand_file)
     assert type(digit) == float or type(digit) == int
