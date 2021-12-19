@@ -1,4 +1,9 @@
 # TechZ-3
+
+![example workflow](https://github.com/stefanitg/Git-demo/blob/workflows/python-app.yml/badge.svg)
+
+![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+
 __Репозиторий__ созданный в результате выполнения *технического задания* __№3__.
 Насколько я поняла из задания:
 >Оформите простейший README.md.
