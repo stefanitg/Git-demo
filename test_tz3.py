@@ -19,26 +19,27 @@ def test_over_flow_error():
 
 
 def test_search_maxn():
-    file_name = random_list()
-    maxi = max(file_name)
-    assert search_maxn(file_name) == maxi
+    file_test = random_list()
+    maxi = max(file_test)
+    assert search_maxn(file_test) == maxi
 
 
 def test_search_minn():
-    file_name = random_list()
-    mini = max(file_name)
-    assert search_minn(file_name) == mini
+    file_test = random_list()
+    mini = max(file_test)
+    assert search_minn(file_test) == mini
 
 
 def test_find_sum_of_n():
-    file_name = random_list()
-    sumi = sum(file_name)
-    assert find_sum_of_n(file_name) == sumi
+    file_test = random_list()
+    sumi = sum(file_test)
+    assert find_sum_of_n(file_test) == sumi
 
 
 def test_find_multi():
     multi = 1
-    file_name = random_list()
-    for i in file_name:
+    file_test = random_list()
+    for i in file_test:
         multi *= float(i)
-    assert find_multi(file_name) == multi
+    assert find_multi(file_test) == multi
+
