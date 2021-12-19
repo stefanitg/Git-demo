@@ -34,15 +34,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-        
-    - name: Edit config
-      run: git config --global user.email "stefani.tihonova@yandex.ru" && git config --global user.name "stefanitg"
-    - name: "Version patch"
-      run: npm version 0.1.$GITHUB_RUN_ID
-        
-    - name: "Telegram Notifications"
-    - uses: "appleboy/telegram-action@master"
-      with:
-        to: ${{ secrets.TELEGRAM_CHAT_ID }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: New 0.1.${{ github.run_id }} version
